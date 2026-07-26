@@ -419,7 +419,7 @@
   </div>
 
   <!-- ── FEATURED: HAITICARD ── -->
-  <a href="https://haiticard-app3-pl9m.vercel.app" target="_blank" rel="noopener" class="featured">
+  <a href="https://haiticard-app3.vercel.app" target="_blank" rel="noopener" class="featured">
     <div class="featured-eyebrow">Featured · Now Live</div>
     <div class="featured-title"><span>Haiti</span>Card 💳</div>
     <div class="featured-tagline">Financial freedom finally came to Haiti 🇭🇹</div>
@@ -432,7 +432,16 @@
     </div>
 
     <div class="featured-cta">Apply FREE — Get Your Card →</div>
-    <div class="featured-cta-sub">haiticard-app3-pl9m.vercel.app</div>
+    <div class="featured-cta-sub">haiticard-app3.vercel.app</div>
+  </a>
+
+  <a href="https://givebutter.com/mission-september" target="_blank" class="link-btn" style="border-color:rgba(26,107,92,.4);background:rgba(26,107,92,.08);">
+    <span class="link-icon">🎯</span>
+    <span class="link-text">
+      <span class="link-title">Mission September — Donate on Givebutter</span>
+      <span class="link-sub">givebutter.com/mission-september</span>
+    </span>
+    <span class="link-arrow">→</span>
   </a>
 
   <a href="https://www.paypal.com/donate/?business=peterphilentrope%40gmail.com&currency_code=USD&item_name=Keep+a+Haitian+Child+in+School" target="_blank" class="link-btn" style="border-color:rgba(0,112,243,.3);background:rgba(0,112,243,.06);">
@@ -467,13 +476,40 @@
     <div class="divider-line"></div>
   </div>
 
-  <a href="https://fatherleaderfoundation.org" target="_blank" rel="noopener" target="_blank" rel="noopener" class="link-btn">
+  <a href="https://peterphilentrope.com" target="_blank" rel="noopener" class="link-btn">
     <div class="lb-icon">🌐</div>
     <div class="lb-text">
       <div class="lb-title">My Website</div>
-      <div class="lb-sub">fatherleaderfoundation.org · Work, story & contact</div>
+      <div class="lb-sub">peterphilentrope.com · Work, story & contact</div>
     </div>
     <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://ai.studio/apps/0a617c6a-8560-4bc2-b466-2e1340043bfb" target="_blank" class="link-btn" style="border-color:rgba(26,107,92,.3);background:rgba(26,107,92,.06);">
+    <span class="link-icon">🤖</span>
+    <span class="link-text">
+      <span class="link-title">Try HaitiCard App — Google AI Studio</span>
+      <span class="link-sub">ai.studio/apps/0a617c6a</span>
+    </span>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="https://wise.com/invite/ahpc/peterp444" target="_blank" class="link-btn" style="border-color:rgba(0,180,100,.3);background:rgba(0,180,100,.06);">
+    <span class="link-icon">💸</span>
+    <span class="link-text">
+      <span class="link-title">Wise Money Transfer — Referral Link</span>
+      <span class="link-sub">wise.com/invite/ahpc/peterp444</span>
+    </span>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="https://amazon.com/dp/B0H6PPPPXM" target="_blank" rel="noopener" class="link-btn" style="border-color:rgba(212,168,50,.3);background:rgba(212,168,50,.06);">
+    <div class="lb-icon">📚</div>
+    <div class="lb-content">
+      <div class="lb-title">My Book — Side Hustle to Success</div>
+      <div class="lb-sub">Available on Amazon · eBook $4.99 · Paperback $12.99</div>
+    </div>
+    <div class="lb-arrow">→</div>
   </a>
 
   <a href="https://drive.google.com/file/d/1aTuGToAjQjpF87IpgLlXZPY_OxKDOLEg/view?usp=drivesdk" target="_blank" target="_blank" rel="noopener" class="link-btn">
@@ -512,7 +548,7 @@
 
   <!-- ── FOOTER ── -->
   <div class="bio-footer">
-    <div>© 2025 Pete Philentrope</div>
+    <div>© 2026 Pete Philentrope</div>
     <div><a href="https://fatherleaderfoundation.org" target="_blank" rel="noopener">fatherleaderfoundation.org</a></div>
     <div style="margin-top:.35rem;color:rgba(76,175,125,.6);font-size:.6rem">
       FatherLeader Foundation · Keeping Haitian Children in School
