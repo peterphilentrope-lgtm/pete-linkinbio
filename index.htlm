@@ -1,782 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Ayiti Naturals — Pure aloe skincare made in Haiti. Aloe Vera Gel, Repair Cream, and Natural Soap. Grown in Haiti. Made with love."/>
-<title>Ayiti Naturals — Grown in Haiti. Made with Love.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Pete Philentrope — FatherLeader Foundation, HaitiCard, Ayiti Naturals and more. Port-au-Prince, Haiti." />
+<title>Pete Philentrope</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-:root{
-  --g0:#0d2318;
-  --g1:#163d27;
-  --g2:#1f5c38;
-  --g3:#2d7a4a;
-  --g4:#52b788;
-  --g5:#a8dfc0;
-  --g6:#e4f5ec;
-  --gold:#c9930a;
-  --goldb:#f0b429;
-  --goldp:#fffbec;
-  --red:#ce1126;
-  --blue:#003087;
-  --sand:#faf6ef;
-  --sand2:#f2ebe0;
-  --ink:#141a10;
-  --ink2:#3a4e35;
-  --ink3:#6b7e63;
-  --white:#ffffff;
-  --border:#dde8d8;
-  --ff-head:'Playfair Display',serif;
-  --ff-body:'DM Sans',sans-serif;
-  --ff-mono:'DM Mono',monospace;
-}
-body{font-family:var(--ff-body);background:var(--sand);color:var(--ink);overflow-x:hidden;line-height:1.7}
-a{color:inherit;text-decoration:none}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #09080a; --bg2: #0f0e11; --bdr: #252230;
+    --gold: #c8a96e; --goldlt: #e4c98a; --golddk: #8a6b3a;
+    --green: #4caf7d; --text: #e9e3f0; --muted: #6b6278;
+    --white: #f7f2ff; --sans: "Outfit", system-ui, sans-serif;
+    --serif: "Cormorant Garamond", Georgia, serif;
+  }
+  html { font-size: 16px; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--sans);
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; padding: 2.5rem 1.25rem 4rem;
+    line-height: 1.6; position: relative; overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 40% at 50% 0%, rgba(200,169,110,.06) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 30% at 50% 100%, rgba(76,175,125,.04) 0%, transparent 70%);
+    z-index: 0;
+  }
+  .page { width: 100%; max-width: 480px; position: relative; z-index: 1; }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(250,246,239,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-logo{display:flex;align-items:center;gap:.5rem;font-family:var(--ff-head);font-weight:900;font-size:1.1rem;color:var(--g0)}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);transition:color .2s}
-.nav-links a:hover{color:var(--g2)}
-.nav-right{display:flex;align-items:center;gap:.75rem}
-.lang-toggle{display:flex;gap:.3rem}
-.lang-btn{background:transparent;border:1px solid var(--border);color:var(--ink3);padding:.25rem .5rem;border-radius:4px;font-size:.7rem;font-weight:600;cursor:pointer;font-family:var(--ff-body);transition:all .2s}
-.lang-btn.active,.lang-btn:hover{background:var(--g2);border-color:var(--g2);color:white}
-.nav-cta{background:var(--g2);color:white;border:none;padding:.55rem 1.2rem;border-radius:6px;font-family:var(--ff-body);font-size:.78rem;font-weight:600;cursor:pointer;transition:background .2s}
-.nav-cta:hover{background:var(--g3)}
+  /* PROFILE */
+  .profile { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2.25rem; }
+  .avatar-wrap { position: relative; width: 90px; height: 90px; margin-bottom: 1rem; }
+  .avatar-ring { position: absolute; inset: -4px; border-radius: 50%; border: 1.5px solid var(--golddk); animation: spinSlow 20s linear infinite; }
+  .avatar-ring::before { content: ""; position: absolute; top: 4px; left: 50%; transform: translateX(-50%); width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+  .avatar-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: top center; border: 1px solid var(--golddk); display: block; }
+  .profile-name { font-family: var(--serif); font-size: 1.55rem; font-weight: 600; color: var(--white); letter-spacing: -.01em; margin-bottom: .2rem; }
+  .profile-handle { font-size: .78rem; color: var(--muted); letter-spacing: .08em; margin-bottom: .75rem; }
+  .profile-bio { font-size: .88rem; color: var(--text); max-width: 34ch; line-height: 1.7; margin-bottom: 1rem; opacity: .8; }
+  .profile-flags { display: flex; align-items: center; gap: .4rem; font-size: .75rem; color: var(--muted); letter-spacing: .05em; }
 
-/* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden;background:linear-gradient(145deg,var(--g0) 0%,#0a1c10 55%,#152a1e 100%)}
-.hero-leaf{position:absolute;font-size:clamp(200px,30vw,400px);opacity:.04;right:-5%;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;user-select:none}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem 1rem;border-radius:40px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--g5);margin-bottom:1.25rem}
-h1{font-family:var(--ff-head);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1.0;color:white;margin-bottom:1.25rem}
-h1 em{color:var(--goldb);font-style:normal}
-.hero-desc{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:2rem;max-width:42ch}
-.hero-btns{display:flex;flex-wrap:wrap;gap:.75rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;font-family:var(--ff-body);font-size:.82rem;font-weight:600;border-radius:6px;cursor:pointer;border:none;transition:all .2s}
-.btn-primary{background:var(--g3);color:white}
-.btn-primary:hover{background:var(--g4);transform:translateY(-1px)}
-.btn-gold{background:var(--goldb);color:var(--g0)}
-.btn-gold:hover{background:var(--gold);transform:translateY(-1px)}
-.btn-outline{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2)}
-.btn-outline:hover{border-color:var(--g5);color:var(--g5)}
+  /* MISSION COUNTER */
+  .mission-bar {
+    background: linear-gradient(135deg, #0d1f35 0%, #0a1520 100%);
+    border: 1px solid rgba(76,175,125,.3);
+    border-radius: 12px; padding: 1rem 1.25rem;
+    margin-bottom: 1rem; display: flex; gap: 1rem; justify-content: space-around;
+  }
+  .mission-stat { text-align: center; }
+  .mission-num { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; color: var(--green); line-height: 1; }
+  .mission-label { font-size: .62rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-top: .2rem; }
 
-/* PRODUCT CARDS IN HERO */
-.hero-products{display:flex;flex-direction:column;gap:1rem}
-.hero-product-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:1rem;transition:background .2s}
-.hero-product-card:hover{background:rgba(255,255,255,.12)}
-.hpc-icon{font-size:2rem;width:3rem;text-align:center}
-.hpc-name{font-family:var(--ff-head);font-size:1rem;font-weight:700;color:white}
-.hpc-desc{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.15rem}
-.hpc-price{margin-left:auto;font-family:var(--ff-mono);font-size:1.1rem;font-weight:500;color:var(--goldb)}
+  /* FEATURED CARD */
+  .featured {
+    background: linear-gradient(135deg, #0d1f35 0%, #0a1520 60%, #0f1e10 100%);
+    border: 1px solid rgba(200,169,110,.25); border-radius: 16px;
+    padding: 1.75rem 1.5rem 1.5rem; margin-bottom: 1rem;
+    position: relative; overflow: hidden; text-decoration: none; display: block;
+    transition: transform .25s ease, border-color .25s;
+  }
+  .featured:hover { transform: translateY(-2px); border-color: rgba(200,169,110,.5); }
+  .featured:active { transform: scale(.98); }
+  .featured::before { content: ""; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,.12) 0%, transparent 70%); pointer-events: none; }
+  .featured::after { content: ""; position: absolute; bottom: -30px; left: -30px; width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(76,175,125,.08) 0%, transparent 70%); pointer-events: none; }
+  .featured-eyebrow { font-size: .62rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; display: flex; align-items: center; gap: .4rem; }
+  .featured-eyebrow::before { content: "★"; font-size: .5rem; }
+  .featured-title { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: var(--white); line-height: 1.1; margin-bottom: .35rem; letter-spacing: -.01em; }
+  .featured-title span { color: var(--gold); font-style: italic; }
+  .featured-tagline { font-size: .85rem; color: rgba(233,227,240,.6); margin-bottom: 1.25rem; font-weight: 300; }
+  .featured-features { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-bottom: 1.5rem; }
+  .ff-item { display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(233,227,240,.75); }
+  .ff-icon { font-size: .95rem; flex-shrink: 0; }
+  .featured-cta { background: var(--gold); color: #09080a; border: none; border-radius: 8px; padding: .8rem 1.5rem; font-family: var(--sans); font-size: .82rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: .5rem; transition: background .2s; text-decoration: none; }
+  .featured-cta:hover { background: var(--goldlt); }
+  .featured-cta-sub { text-align: center; font-size: .7rem; color: var(--muted); margin-top: .6rem; letter-spacing: .05em; }
 
-/* TICKER */
-.ticker{background:var(--g2);padding:.55rem 0;overflow:hidden;white-space:nowrap}
-.ticker-inner{display:inline-block;animation:ticker 20s linear infinite;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  /* LINK BUTTONS */
+  .link-btn { display: flex; align-items: center; gap: 1rem; width: 100%; padding: 1rem 1.25rem; margin-bottom: .65rem; background: var(--bg2); border: 1px solid var(--bdr); border-radius: 12px; text-decoration: none; color: var(--text); transition: all .22s ease; position: relative; overflow: hidden; }
+  .link-btn::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold); transform: scaleY(0); transition: transform .22s ease; transform-origin: center; }
+  .link-btn:hover { background: #141218; border-color: var(--golddk); transform: translateX(3px); }
+  .link-btn:hover::before { transform: scaleY(1); }
+  .link-btn:active { transform: scale(.98); }
+  .link-btn.green-accent::before { background: var(--green); }
+  .link-btn.green-accent:hover { border-color: rgba(76,175,125,.4); }
+  .lb-icon { font-size: 1.3rem; flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.04); border-radius: 8px; }
+  .lb-text { flex: 1; }
+  .lb-title { font-size: .92rem; font-weight: 500; color: var(--white); line-height: 1.3; }
+  .lb-sub { font-size: .72rem; color: var(--muted); margin-top: .1rem; }
+  .lb-arrow { color: var(--muted); font-size: .85rem; flex-shrink: 0; transition: transform .2s, color .2s; }
+  .link-btn:hover .lb-arrow { transform: translateX(3px); color: var(--gold); }
+  .link-btn.green-accent:hover .lb-arrow { color: var(--green); }
 
-/* SECTIONS */
-.section{padding:6rem 0}
-.wrap{max-width:1100px;margin:0 auto;padding:0 2rem}
-.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--g3);margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem}
-.eyebrow::before{content:'';display:block;width:1.5rem;height:1px;background:var(--g3)}
-h2{font-family:var(--ff-head);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;line-height:1.1;color:var(--ink)}
-h2 em{font-style:normal;color:var(--g2)}
+  /* DIVIDER */
+  .divider { display: flex; align-items: center; gap: .75rem; margin: 1.25rem 0 .75rem; }
+  .divider-line { flex: 1; height: 1px; background: var(--bdr); }
+  .divider-label { font-size: .6rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 
-/* WHY */
-#why{background:var(--white)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.why-card{background:var(--sand);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:border-color .2s}
-.why-card:hover{border-color:var(--g4)}
-.why-icon{font-size:2rem;margin-bottom:1rem}
-.why-title{font-family:var(--ff-head);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
-.why-desc{font-size:.85rem;color:var(--ink3);line-height:1.7}
+  /* SOCIALS */
+  .socials { display: flex; justify-content: center; gap: .6rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .social-btn { display: flex; align-items: center; gap: .4rem; padding: .5rem .9rem; background: var(--bg2); border: 1px solid var(--bdr); border-radius: 20px; text-decoration: none; font-size: .72rem; color: var(--muted); letter-spacing: .05em; transition: all .2s; }
+  .social-btn:hover { border-color: var(--golddk); color: var(--goldlt); }
+  .social-btn .s-icon { font-size: .85rem; }
 
-/* PRODUCTS */
-#products{background:var(--sand)}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.product-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s}
-.product-card:hover{border-color:var(--g4);box-shadow:0 12px 40px rgba(13,61,39,.1);transform:translateY(-2px)}
-.product-card-top{padding:2.5rem 2rem;text-align:center;background:linear-gradient(135deg,var(--g1),var(--g0))}
-.product-emoji{font-size:3.5rem;margin-bottom:.75rem;display:block}
-.product-name{font-family:var(--ff-head);font-size:1.3rem;font-weight:700;color:white;margin-bottom:.3rem}
-.product-sub{font-size:.78rem;color:rgba(255,255,255,.5)}
-.product-card-body{padding:1.5rem}
-.product-benefits{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
-.product-benefits li{font-size:.82rem;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
-.product-benefits li::before{content:'✓';color:var(--g3);font-weight:700}
-.product-sizes{display:flex;gap:.5rem;margin-bottom:1.25rem;flex-wrap:wrap}
-.size-tag{font-size:.72rem;font-weight:600;padding:.25rem .6rem;border-radius:20px;background:var(--g6);color:var(--g2);border:1px solid var(--g5)}
-.product-price{display:flex;align-items:baseline;gap:.4rem;margin-bottom:1rem}
-.price-amount{font-family:var(--ff-head);font-size:1.8rem;font-weight:700;color:var(--g2)}
-.price-range{font-size:.8rem;color:var(--ink3)}
-.product-margin{font-size:.72rem;font-weight:700;color:var(--gold);margin-bottom:1rem}
-.btn-product{width:100%;text-align:center;justify-content:center;background:var(--g2);color:white;border:none}
-.btn-product:hover{background:var(--g3)}
+  /* FOOTER */
+  .bio-footer { text-align: center; margin-top: 2.5rem; font-size: .65rem; color: var(--muted); letter-spacing: .08em; line-height: 2; }
+  .bio-footer a { color: var(--golddk); text-decoration: none; }
+  .bio-footer a:hover { color: var(--gold); }
 
-/* BUNDLES */
-#bundles{background:var(--white)}
-.bundles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
-.bundle-card{background:var(--sand);border:1.5px solid var(--border);border-radius:12px;padding:1.75rem;transition:all .2s}
-.bundle-card:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(201,147,10,.1)}
-.bundle-icon{font-size:1.75rem;margin-bottom:.75rem}
-.bundle-name{font-family:var(--ff-head);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
-.bundle-contents{font-size:.8rem;color:var(--ink3);margin-bottom:1rem;line-height:1.6}
-.bundle-price{font-family:var(--ff-head);font-size:1.6rem;font-weight:700;color:var(--g2)}
-.bundle-save{font-size:.72rem;font-weight:700;color:var(--gold);margin-top:.2rem}
-
-/* STORY */
-#story{background:linear-gradient(145deg,var(--g0),#0a1c10)}
-.story-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.story-quote{font-family:var(--ff-head);font-size:clamp(1.3rem,2.5vw,1.8rem);font-style:italic;color:white;line-height:1.4;margin-bottom:1.5rem}
-.story-quote em{color:var(--goldb);font-style:normal}
-.story-body{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:1.5rem}
-.story-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-.stat-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.25rem;text-align:center}
-.stat-num{font-family:var(--ff-head);font-size:1.8rem;font-weight:700;color:var(--goldb)}
-.stat-label{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem;text-transform:uppercase;letter-spacing:.1em}
-.haiti-flag{font-size:clamp(6rem,15vw,10rem);line-height:1;text-align:center;opacity:.8}
-
-/* ORDER */
-#order{background:var(--sand2)}
-.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
-.order-form{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2.5rem}
-.form-title{font-family:var(--ff-head);font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem}
-.form-group{margin-bottom:1.1rem}
-.form-label{font-size:.78rem;font-weight:600;color:var(--ink2);display:block;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em}
-.form-input,.form-select{width:100%;padding:.75rem 1rem;background:var(--sand);border:1.5px solid var(--border);border-radius:8px;color:var(--ink);font-family:var(--ff-body);font-size:.9rem;outline:none;transition:border-color .2s}
-.form-input:focus,.form-select:focus{border-color:var(--g3)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.order-info{display:flex;flex-direction:column;gap:1.25rem}
-.order-info-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start}
-.oic-icon{font-size:1.5rem;flex-shrink:0}
-.oic-title{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.25rem}
-.oic-desc{font-size:.8rem;color:var(--ink3);line-height:1.6}
-
-/* PAYMENT */
-.payment-options{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.25rem}
-.payment-opt{display:flex;align-items:center;gap.75rem;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;transition:all .2s;background:var(--sand)}
-.payment-opt:hover,.payment-opt.selected{border-color:var(--g3);background:var(--g6)}
-.payment-opt input{margin-right:.75rem}
-.payment-opt-name{font-size:.85rem;font-weight:600;color:var(--ink)}
-.payment-opt-sub{font-size:.72rem;color:var(--ink3);margin-left:auto}
-
-/* INGREDIENTS */
-#ingredients{background:var(--white)}
-.ing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
-.ing-card{background:var(--g6);border:1px solid var(--g5);border-radius:10px;padding:1.25rem;text-align:center}
-.ing-icon{font-size:1.75rem;margin-bottom:.5rem}
-.ing-name{font-size:.85rem;font-weight:700;color:var(--g1);margin-bottom:.25rem}
-.ing-role{font-size:.72rem;color:var(--ink3);line-height:1.5}
-
-/* HAITICARD */
-#haiticard{background:linear-gradient(135deg,#002B7F,#0d1420)}
-.hc-inner{text-align:center;max-width:700px;margin:0 auto}
-.hc-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem 1rem;border-radius:40px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,244,255,.7);margin-bottom:1.25rem}
-.hc-title{font-family:var(--ff-head);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;color:white;margin-bottom:1rem}
-.hc-title span{color:#F5A623}
-.hc-desc{color:rgba(255,255,255,.6);font-size:1rem;line-height:1.8;margin-bottom:2rem}
-
-/* FOOTER */
-footer{background:var(--g0);padding:3rem 0 2rem}
-.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem}
-.footer-brand{font-family:var(--ff-head);font-size:1.1rem;font-weight:900;color:white}
-.footer-brand span{color:var(--goldb)}
-.footer-tagline{font-size:.8rem;color:rgba(255,255,255,.3);margin-top:.3rem}
-.footer-links{display:flex;gap:1.5rem;list-style:none}
-.footer-links a{font-size:.78rem;color:rgba(255,255,255,.3);transition:color .2s}
-.footer-links a:hover{color:var(--goldb)}
-.footer-bottom{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.72rem;color:rgba(255,255,255,.2)}
-
-/* TOAST */
-.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--g2);color:white;padding:.75rem 1.5rem;border-radius:8px;font-size:.85rem;font-weight:500;transition:transform .3s;z-index:999;pointer-events:none}
-.toast.show{transform:translateX(-50%) translateY(0)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* LANG */
-[data-lang]{display:none}
-[data-lang].active{display:block}
-span[data-lang]{display:none}
-span[data-lang].active{display:inline}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:1rem}
-  .nav-links{display:none}
-  .hero-inner,.story-inner,.order-grid{grid-template-columns:1fr;gap:2.5rem}
-  .why-grid,.products-grid,.bundles-grid{grid-template-columns:1fr}
-  .ing-grid{grid-template-columns:repeat(2,1fr)}
-  .wrap{padding:0 1.25rem}
-  .section{padding:4rem 0}
-}
+  @keyframes spinSlow { to { transform: rotate(360deg); } }
+  .page > * { opacity: 0; transform: translateY(16px); animation: fadeUp .5s ease forwards; }
+  .page > *:nth-child(1) { animation-delay: .05s; }
+  .page > *:nth-child(2) { animation-delay: .12s; }
+  .page > *:nth-child(3) { animation-delay: .18s; }
+  .page > *:nth-child(4) { animation-delay: .24s; }
+  .page > *:nth-child(5) { animation-delay: .30s; }
+  .page > *:nth-child(6) { animation-delay: .36s; }
+  .page > *:nth-child(7) { animation-delay: .42s; }
+  .page > *:nth-child(8) { animation-delay: .48s; }
+  .page > *:nth-child(9) { animation-delay: .54s; }
+  .page > *:nth-child(10) { animation-delay: .60s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
+<div class="page">
 
-<div class="toast" id="toast">Order received!</div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">🌿 Ayiti <span>Naturals</span></div>
-  <ul class="nav-links">
-    <li><a href="#products">Products</a></li>
-    <li><a href="#bundles">Bundles</a></li>
-    <li><a href="#story">Our Story</a></li>
-    <li><a href="#order">Order</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇺🇸</button>
-      <button class="lang-btn" onclick="setLang('fr')" id="btn-fr">🇫🇷</button>
-      <button class="lang-btn" onclick="setLang('ht')" id="btn-ht">🇭🇹</button>
+  <!-- PROFILE -->
+  <div class="profile">
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <img class="avatar-img" src="https://peterphilentrope.com/assets/pete.jpg" alt="Pete Philentrope" onerror="this.style.background='#1a3a5c';this.style.display='flex';" />
     </div>
-    <button class="btn nav-cta" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
-      <span data-lang="en" class="active">Order Now</span>
-      <span data-lang="fr">Commander</span>
-      <span data-lang="ht">Kòmande</span>
-    </button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-leaf">🌿</div>
-  <div class="hero-inner wrap">
-    <div>
-      <div class="hero-badge">🌿 <span data-lang="en" class="active">Pure · Natural · Haitian</span><span data-lang="fr">Pur · Naturel · Haïtien</span><span data-lang="ht">Pi · Natirèl · Ayisyen</span></div>
-      <h1>
-        <span data-lang="en" class="active">Grown in Haiti.<br><em>Made with Love.</em></span>
-        <span data-lang="fr">Cultivé en Haïti.<br><em>Fait avec Amour.</em></span>
-        <span data-lang="ht">Grandi an Ayiti.<br><em>Fèt ak Renmen.</em></span>
-      </h1>
-      <p class="hero-desc">
-        <span data-lang="en" class="active">Real aloe vera skincare handcrafted from Port-au-Prince, Haiti. Your grandmother's remedy. Professional formula. Direct from the source.</span>
-        <span data-lang="fr">Soins de la peau à l'aloe vera artisanaux fabriqués à Port-au-Prince, Haïti. Le remède de votre grand-mère. Formule professionnelle. Directement à la source.</span>
-        <span data-lang="ht">Swen po aloe vera fèt a la men nan Pòtoprens, Ayiti. Remèd grann ou. Fòmil pwofesyonèl. Dirèkteman nan sous la.</span>
-      </p>
-      <div class="hero-btns">
-        <button class="btn btn-gold" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
-          <span data-lang="en" class="active">Shop Products →</span>
-          <span data-lang="fr">Acheter →</span>
-          <span data-lang="ht">Achte →</span>
-        </button>
-        <button class="btn btn-outline" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
-          <span data-lang="en" class="active">Our Story</span>
-          <span data-lang="fr">Notre Histoire</span>
-          <span data-lang="ht">Istwa Nou</span>
-        </button>
-      </div>
-    </div>
-    <div class="hero-products reveal">
-      <div class="hero-product-card">
-        <div class="hpc-icon">🌿</div>
-        <div>
-          <div class="hpc-name">Aloe Vera Gel</div>
-          <div class="hpc-desc">Skin + After-sun · Beginner favorite</div>
-        </div>
-        <div class="hpc-price">$12</div>
-      </div>
-      <div class="hero-product-card">
-        <div class="hpc-icon">💚</div>
-        <div>
-          <div class="hpc-name">Repair Cream</div>
-          <div class="hpc-desc">Skin + Hair · Rich emulsion</div>
-        </div>
-        <div class="hpc-price">$22</div>
-      </div>
-      <div class="hero-product-card">
-        <div class="hpc-icon">🧼</div>
-        <div>
-          <div class="hpc-name">Aloe Soap Bar</div>
-          <div class="hpc-desc">Natural · Gentle · Daily use</div>
-        </div>
-        <div class="hpc-price">$7</div>
-      </div>
-      <div class="hero-product-card" style="border-color:rgba(240,180,41,.3);background:rgba(240,180,41,.08)">
-        <div class="hpc-icon">🎁</div>
-        <div>
-          <div class="hpc-name">Starter Bundle</div>
-          <div class="hpc-desc">All 3 products · Best value</div>
-        </div>
-        <div class="hpc-price" style="color:#f0b429">$24</div>
-      </div>
+    <div class="profile-name">Pete Philentrope</div>
+    <div class="profile-handle">@peterphilentrope · @fatherleader0</div>
+    <p class="profile-bio">Entrepreneur · AI Professional · Nonprofit Founder<br>Building from Port-au-Prince, Haiti 🇭🇹</p>
+    <div class="profile-flags">
+      <span>🇭🇹</span><span>Port-au-Prince, Haiti</span>
     </div>
   </div>
-</section>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-inner">Pure Aloe Vera &nbsp;·&nbsp; Handcrafted in Haiti 🇭🇹 &nbsp;·&nbsp; No Parabens &nbsp;·&nbsp; No Sulfates &nbsp;·&nbsp; Natural Preservatives &nbsp;·&nbsp; 80% Gross Margin &nbsp;·&nbsp; Ships Worldwide &nbsp;·&nbsp; Pay with HaitiCard 💳 &nbsp;·&nbsp; Pure Aloe Vera &nbsp;·&nbsp; Handcrafted in Haiti 🇭🇹 &nbsp;·&nbsp; No Parabens &nbsp;·&nbsp; No Sulfates &nbsp;·&nbsp; Natural Preservatives &nbsp;·&nbsp; 80% Gross Margin &nbsp;·&nbsp; Ships Worldwide &nbsp;·&nbsp; Pay with HaitiCard 💳 &nbsp;·&nbsp;</div>
+  <!-- MISSION COUNTER -->
+  <div class="mission-bar">
+    <div class="mission-stat">
+      <div class="mission-num">2</div>
+      <div class="mission-label">Cases Closed</div>
+    </div>
+    <div class="mission-stat">
+      <div class="mission-num">4+</div>
+      <div class="mission-label">Families Helped</div>
+    </div>
+    <div class="mission-stat">
+      <div class="mission-num">$70</div>
+      <div class="mission-label">Keeps 1 Child in School</div>
+    </div>
+  </div>
+
+  <!-- FEATURED: MISSION SEPTEMBER -->
+  <a href="https://givebutter.com/mission-september" target="_blank" rel="noopener" class="featured">
+    <div class="featured-eyebrow">Urgent · Mission September 2026</div>
+    <div class="featured-title"><span>Keep a Haitian</span> Child in School 🇭🇹</div>
+    <div class="featured-tagline">FatherLeader Foundation — Direct school fee grants. No middleman. Child back in class within 7 days.</div>
+    <div class="featured-features">
+      <div class="ff-item"><span class="ff-icon">✅</span> Verified families only</div>
+      <div class="ff-item"><span class="ff-icon">🏫</span> We pay the school directly</div>
+      <div class="ff-item"><span class="ff-icon">💰</span> $70 per child per year</div>
+      <div class="ff-item"><span class="ff-icon">📹</span> Every case documented</div>
+    </div>
+    <div class="featured-cta">Donate Now — Mission September →</div>
+    <div class="featured-cta-sub">givebutter.com/mission-september</div>
+  </a>
+
+  <!-- FOUNDATION LINKS -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">Donate</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <a href="https://www.gofundme.com/f/keep-a-haitian-child-in-school-fatherleader-foundation" target="_blank" rel="noopener" class="link-btn green-accent">
+    <div class="lb-icon">❤️</div>
+    <div class="lb-text">
+      <div class="lb-title">GoFundMe — FatherLeader Foundation</div>
+      <div class="lb-sub">Keep a Haitian child in school · Mission September 2026</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://www.paypal.com/donate/?business=peterphilentrope%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="link-btn green-accent">
+    <div class="lb-icon">💙</div>
+    <div class="lb-text">
+      <div class="lb-title">Donate via PayPal</div>
+      <div class="lb-sub">Quick and secure · Any amount helps</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://fatherleaderfoundation.org" target="_blank" rel="noopener" class="link-btn green-accent">
+    <div class="lb-icon">🌐</div>
+    <div class="lb-text">
+      <div class="lb-title">FatherLeader Foundation</div>
+      <div class="lb-sub">fatherleaderfoundation.org · EIN 42-3312236</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <!-- VENTURES -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">My Ventures</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <a href="https://haiticard-app3.vercel.app" target="_blank" rel="noopener" class="link-btn">
+    <div class="lb-icon">💳</div>
+    <div class="lb-text">
+      <div class="lb-title">HaitiCard — Digital Wallet for Haiti</div>
+      <div class="lb-sub">MonCash to global payments · Apply free</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://www.gofundme.com/f/haiticard-financial-freedom-for-haiti" target="_blank" rel="noopener" class="link-btn">
+    <div class="lb-icon">🚀</div>
+    <div class="lb-text">
+      <div class="lb-title">Support HaitiCard</div>
+      <div class="lb-sub">GoFundMe · Financial freedom for Haiti</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://ayiti-naturals.vercel.app" target="_blank" rel="noopener" class="link-btn">
+    <div class="lb-icon">🌿</div>
+    <div class="lb-text">
+      <div class="lb-title">Ayiti Naturals — Pure Aloe Skincare</div>
+      <div class="lb-sub">10% of every sale supports FatherLeader Foundation</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://www.amazon.com/dp/B0H6PPPPXM" target="_blank" rel="noopener" class="link-btn">
+    <div class="lb-icon">📚</div>
+    <div class="lb-text">
+      <div class="lb-title">Side Hustle to Success — My Book</div>
+      <div class="lb-sub">Available on Amazon · eBook $4.99 · Paperback $12.99</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <!-- PERSONAL -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">Connect</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <a href="https://peterphilentrope.com" target="_blank" rel="noopener" class="link-btn">
+    <div class="lb-icon">🌐</div>
+    <div class="lb-text">
+      <div class="lb-title">My Website</div>
+      <div class="lb-sub">peterphilentrope.com · Work, story and contact</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://wise.com/invite/ahpc/peterp444" target="_blank" rel="noopener" class="link-btn">
+    <div class="lb-icon">💸</div>
+    <div class="lb-text">
+      <div class="lb-title">Send Money via Wise</div>
+      <div class="lb-sub">Referral link · Fast international transfers</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <a href="https://t.me/fatherleaderfoundation" target="_blank" rel="noopener" class="link-btn">
+    <div class="lb-icon">📢</div>
+    <div class="lb-text">
+      <div class="lb-title">Telegram — FatherLeader Foundation</div>
+      <div class="lb-sub">Follow our mission updates live</div>
+    </div>
+    <span class="lb-arrow">→</span>
+  </a>
+
+  <!-- SOCIALS -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">Follow</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="socials">
+    <a href="https://tiktok.com/@peterphilentrope" target="_blank" rel="noopener" class="social-btn"><span class="s-icon">🎵</span> TikTok</a>
+    <a href="https://tiktok.com/@fatherleader0" target="_blank" rel="noopener" class="social-btn"><span class="s-icon">🎵</span> @fatherleader0</a>
+    <a href="https://facebook.com/rastafan" target="_blank" rel="noopener" class="social-btn"><span class="s-icon">👍</span> Facebook</a>
+    <a href="https://facebook.com/FatherLeader" target="_blank" rel="noopener" class="social-btn"><span class="s-icon">👍</span> Foundation FB</a>
+    <a href="https://www.instagram.com/pphilentrope" target="_blank" rel="noopener" class="social-btn"><span class="s-icon">📷</span> Instagram</a>
+    <a href="https://www.youtube.com/@fatherleaderfoundation" target="_blank" rel="noopener" class="social-btn"><span class="s-icon">▶</span> YouTube</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="bio-footer">
+    <div>© 2026 Pete Philentrope · Port-au-Prince, Haiti 🇭🇹</div>
+    <div><a href="https://peterphilentrope.com">peterphilentrope.com</a></div>
+    <div style="margin-top:.35rem;color:rgba(76,175,125,.6);font-size:.6rem">
+      FatherLeader Foundation, Inc. · EIN 42-3312236 · Florida Nonprofit · Keeping Haitian Children in School
+    </div>
+  </div>
+
 </div>
-
-<!-- IMPACT BANNER -->
-<div style="background:var(--goldp);border-top:2px solid rgba(201,147,10,.2);border-bottom:2px solid rgba(201,147,10,.2);padding:1rem 2rem;text-align:center">
-  <p style="font-size:.9rem;color:var(--ink2);font-weight:500">❤️ <strong>10% of every Ayiti Naturals sale</strong> is donated to <a href="https://fatherleaderfoundation.org" target="_blank" style="color:var(--g2);font-weight:700;text-decoration:underline">FatherLeader Foundation</a> — keeping Haitian children in school. <span style="color:var(--gold);font-weight:700">Shop good. Do good. 🇭🇹</span></p>
-</div>
-
-<!-- WHY -->
-<section id="why" class="section">
-  <div class="wrap reveal">
-    <div class="eyebrow">
-      <span data-lang="en" class="active">Why Ayiti Naturals</span>
-      <span data-lang="fr">Pourquoi Ayiti Naturals</span>
-      <span data-lang="ht">Poukisa Ayiti Naturals</span>
-    </div>
-    <h2>
-      <span data-lang="en" class="active">Your homeland<br><em>in a bottle.</em></span>
-      <span data-lang="fr">Votre patrie<br><em>dans une bouteille.</em></span>
-      <span data-lang="ht">Peyi ou<br><em>nan yon boutèy.</em></span>
-    </h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🌱</div>
-        <div class="why-title">Real Haitian Aloe</div>
-        <div class="why-desc">70% pure aloe vera in every product. No filler. No artificial thickeners. Grown in Haitian soil with generations of natural remedy tradition behind every formula.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔬</div>
-        <div class="why-title">Professional Formulas</div>
-        <div class="why-desc">Every product is formulated to cosmetic-grade standards. Correct pH, proper preservation, and exact ingredient ratios. Your grandmother's remedy — now with a lab coat.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🇭🇹</div>
-        <div class="why-title">Made in Haiti</div>
-        <div class="why-desc">Every purchase supports a Haitian business, a Haitian family, and the Haitian economy. When you buy Ayiti Naturals — you buy Haiti. That is the real product.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">✅</div>
-        <div class="why-title">No Harmful Ingredients</div>
-        <div class="why-desc">No parabens. No sulfates. No synthetic fragrances. No harsh chemicals. Just clean, effective ingredients that work for all skin types including sensitive skin.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📦</div>
-        <div class="why-title">Fresh Made to Order</div>
-        <div class="why-desc">Every batch is made fresh. Not sitting in a warehouse for years. Your product ships within 2 days of your order. You know exactly what you are getting.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💳</div>
-        <div class="why-title">Pay with HaitiCard</div>
-        <div class="why-desc">Haitian diaspora can now support Haitian products using HaitiCard — Haiti's first digital wallet. PayPal, MonCash, and international payments all accepted.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products" class="section">
-  <div class="wrap reveal">
-    <div class="eyebrow">
-      <span data-lang="en" class="active">Our Products</span>
-      <span data-lang="fr">Nos Produits</span>
-      <span data-lang="ht">Pwodui Nou Yo</span>
-    </div>
-    <h2>
-      <span data-lang="en" class="active">Three products.<br><em>One plant.</em></span>
-      <span data-lang="fr">Trois produits.<br><em>Une plante.</em></span>
-      <span data-lang="ht">Twa pwodui.<br><em>Yon plant.</em></span>
-    </h2>
-    <div class="products-grid">
-
-      <!-- GEL -->
-      <div class="product-card">
-        <div class="product-card-top">
-          <span class="product-emoji">🌿</span>
-          <div class="product-name">Aloe Vera Gel</div>
-          <div class="product-sub">Skin + After-sun · Beginner-friendly</div>
-        </div>
-        <div class="product-card-body">
-          <ul class="product-benefits">
-            <li>70% pure aloe vera base</li>
-            <li>Soothes and moisturizes deeply</li>
-            <li>After-sun relief</li>
-            <li>Brightening niacinamide added</li>
-            <li>12 to 18 month shelf life</li>
-            <li>All skin types including sensitive</li>
-          </ul>
-          <div class="product-sizes">
-            <span class="size-tag">1oz</span>
-            <span class="size-tag">2oz</span>
-            <span class="size-tag">4oz</span>
-          </div>
-          <div class="product-price">
-            <span class="price-amount">$12</span>
-            <span class="price-range">to $18</span>
-          </div>
-          <div class="product-margin">~80% gross margin</div>
-          <button class="btn btn-product" onclick="selectProduct('Aloe Vera Gel')">Add to Order →</button>
-        </div>
-      </div>
-
-      <!-- CREAM -->
-      <div class="product-card">
-        <div class="product-card-top" style="background:linear-gradient(135deg,#1a3a1f,#0d2318)">
-          <span class="product-emoji">💚</span>
-          <div class="product-name">Aloe Repair Cream</div>
-          <div class="product-sub">Skin + Hair · Rich emulsion</div>
-        </div>
-        <div class="product-card-body">
-          <ul class="product-benefits">
-            <li>Oil-in-water emulsion formula</li>
-            <li>Skin and hair compatible</li>
-            <li>Shea butter and jojoba oil</li>
-            <li>Intense repair and conditioning</li>
-            <li>12 month shelf life</li>
-            <li>Best for dry and damaged skin</li>
-          </ul>
-          <div class="product-sizes">
-            <span class="size-tag">1oz</span>
-            <span class="size-tag">2oz</span>
-            <span class="size-tag">4oz</span>
-          </div>
-          <div class="product-price">
-            <span class="price-amount">$22</span>
-            <span class="price-range">to $28</span>
-          </div>
-          <div class="product-margin">~75% gross margin</div>
-          <button class="btn btn-product" onclick="selectProduct('Aloe Repair Cream')">Add to Order →</button>
-        </div>
-      </div>
-
-      <!-- SOAP -->
-      <div class="product-card">
-        <div class="product-card-top" style="background:linear-gradient(135deg,#2d4a1e,#163d27)">
-          <span class="product-emoji">🧼</span>
-          <div class="product-name">Aloe Soap Bar</div>
-          <div class="product-sub">Natural · Gentle · Daily use</div>
-        </div>
-        <div class="product-card-body">
-          <ul class="product-benefits">
-            <li>Cold-process soap with aloe</li>
-            <li>Gentle enough for daily use</li>
-            <li>Natural essential oil scent options</li>
-            <li>90g standard bar size</li>
-            <li>Glycerin-rich natural lather</li>
-            <li>No sulfates or harsh surfactants</li>
-          </ul>
-          <div class="product-sizes">
-            <span class="size-tag">90g bar</span>
-            <span class="size-tag">3-pack</span>
-          </div>
-          <div class="product-price">
-            <span class="price-amount">$7</span>
-            <span class="price-range">to $9</span>
-          </div>
-          <div class="product-margin">~80-82% gross margin</div>
-          <button class="btn btn-product" onclick="selectProduct('Aloe Soap Bar')">Add to Order →</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BUNDLES -->
-<section id="bundles" class="section">
-  <div class="wrap reveal">
-    <div class="eyebrow">Bundle Deals</div>
-    <h2>Save more.<br><em>Give more.</em></h2>
-    <div class="bundles-grid">
-      <div class="bundle-card">
-        <div class="bundle-icon">🎁</div>
-        <div class="bundle-name">Starter Bundle</div>
-        <div class="bundle-contents">1 Aloe Gel (2oz) + 1 Soap Bar. Perfect introduction to Ayiti Naturals.</div>
-        <div class="bundle-price">$16</div>
-        <div class="bundle-save">Save $3 vs. buying separately</div>
-        <button class="btn btn-product" style="margin-top:1rem;width:100%;justify-content:center" onclick="selectProduct('Starter Bundle')">Order Bundle →</button>
-      </div>
-      <div class="bundle-card" style="border-color:var(--gold);background:var(--goldp)">
-        <div class="bundle-icon">⭐</div>
-        <div class="bundle-name">Complete Trio</div>
-        <div class="bundle-contents">1 Aloe Gel + 1 Repair Cream + 1 Soap Bar. Our most popular bundle. Everything you need.</div>
-        <div class="bundle-price">$35</div>
-        <div class="bundle-save">Save $6 vs. buying separately</div>
-        <button class="btn btn-product" style="margin-top:1rem;width:100%;justify-content:center;background:var(--gold)" onclick="selectProduct('Complete Trio Bundle')">Order Bundle →</button>
-      </div>
-      <div class="bundle-card">
-        <div class="bundle-icon">❤️</div>
-        <div class="bundle-name">Gift Set</div>
-        <div class="bundle-contents">1 Aloe Gel + 1 Repair Cream + 2 Soap Bars. Perfect for gifting. Ships in gift packaging.</div>
-        <div class="bundle-price">$42</div>
-        <div class="bundle-save">Save $8 + free gift packaging</div>
-        <button class="btn btn-product" style="margin-top:1rem;width:100%;justify-content:center" onclick="selectProduct('Gift Set Bundle')">Order Bundle →</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INGREDIENTS -->
-<section id="ingredients" class="section">
-  <div class="wrap reveal">
-    <div class="eyebrow">What's Inside</div>
-    <h2>Clean ingredients.<br><em>Real results.</em></h2>
-    <div class="ing-grid">
-      <div class="ing-card"><div class="ing-icon">🌿</div><div class="ing-name">Aloe Vera</div><div class="ing-role">Hero ingredient. 70% in every product. Moisturizing, soothing base.</div></div>
-      <div class="ing-card"><div class="ing-icon">🫧</div><div class="ing-name">Glycerin</div><div class="ing-role">Humectant — draws moisture to skin and keeps it there.</div></div>
-      <div class="ing-card"><div class="ing-icon">✨</div><div class="ing-name">Niacinamide</div><div class="ing-role">Vitamin B3. Brightening and pore-reducing. Skin tone evenizer.</div></div>
-      <div class="ing-card"><div class="ing-icon">🌸</div><div class="ing-name">Allantoin</div><div class="ing-role">Skin calming and healing. Reduces redness and irritation.</div></div>
-      <div class="ing-card"><div class="ing-icon">🥑</div><div class="ing-name">Panthenol B5</div><div class="ing-role">Deep conditioning. Penetrates skin and hair shaft for repair.</div></div>
-      <div class="ing-card"><div class="ing-icon">🫒</div><div class="ing-name">Shea Butter</div><div class="ing-role">Rich emollient in the cream. Seals in moisture and repairs barrier.</div></div>
-      <div class="ing-card"><div class="ing-icon">🌻</div><div class="ing-name">Jojoba Oil</div><div class="ing-role">Lightweight carrier oil. Mimics skin's natural sebum.</div></div>
-      <div class="ing-card"><div class="ing-icon">🛡️</div><div class="ing-name">Safe Preservatives</div><div class="ing-role">Phenoxyethanol blend. Broad-spectrum protection. No parabens.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- STORY -->
-<section id="story" class="section">
-  <div class="wrap reveal">
-    <div class="story-inner">
-      <div>
-        <div class="eyebrow" style="color:var(--g5)">Our Story</div>
-        <div class="story-quote">
-          <span data-lang="en" class="active">"Your grandmother made this.<br><em>We just wrote the formula down.</em>"</span>
-          <span data-lang="fr">"Votre grand-mère faisait ça.<br><em>Nous avons juste écrit la formule.</em>"</span>
-          <span data-lang="ht">"Grann ou te fè sa.<br><em>Nou jis ekri fòmil la.</em>"</span>
-        </div>
-        <p class="story-body">
-          <span data-lang="en" class="active">Haitian families have used aloe vera for generations. To soothe sunburn. To heal cuts. To moisturize skin in the Caribbean heat. It was never a product. It was just what you did.<br><br>Ayiti Naturals takes that tradition and builds it into a professional, scalable skincare business — from Port-au-Prince, Haiti. Handcrafted. Preserved properly. Packaged with pride.</span>
-          <span data-lang="fr">Les familles haïtiennes utilisent l'aloe vera depuis des générations. Pour soulager les coups de soleil. Pour guérir les coupures. Pour hydrater la peau sous la chaleur des Caraïbes. Ce n'était jamais un produit. C'était juste ce qu'on faisait.<br><br>Ayiti Naturals prend cette tradition et en fait une entreprise de soins professionnelle — depuis Port-au-Prince, Haïti.</span>
-          <span data-lang="ht">Fanmi ayisyen yo itilize aloe vera pou jenerasyon. Pou kalme kou solèy. Pou geri blesi. Pou moutrize po anba chalè Karayib la. Sa pa t janm yon pwodui. Se te jis sa ou te fè.<br><br>Ayiti Naturals pran tradisyon sa a epi bati yon biznis swen pwofesyonèl — depi Pòtoprens, Ayiti.</span>
-        </p>
-        <div class="story-stats">
-          <div class="stat-box"><div class="stat-num">70%</div><div class="stat-label">Pure Aloe in Every Product</div></div>
-          <div class="stat-box"><div class="stat-num">80%</div><div class="stat-label">Gross Margin Per Product</div></div>
-          <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Products. One Mission.</div></div>
-        </div>
-      </div>
-      <div style="text-align:center">
-        <div class="haiti-flag">🇭🇹</div>
-        <div style="font-family:var(--ff-head);font-size:1.3rem;color:var(--goldb);margin-top:1rem;font-weight:700">Port-au-Prince, Haiti</div>
-        <div style="font-size:.85rem;color:rgba(255,255,255,.4);margin-top:.3rem">Grown here. Made here. Shipped worldwide.</div>
-        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.75rem">
-          <a href="https://fatherleaderfoundation.org" target="_blank" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:1rem;color:rgba(255,255,255,.6);font-size:.82rem;display:flex;align-items:center;gap:.5rem">
-            ❤️ 10% of every Ayiti Naturals sale is donated to FatherLeader Foundation — keeping Haitian children in school.
-          </a>
-          <a href="https://haiticard-app3.vercel.app" target="_blank" style="background:rgba(0,43,127,.3);border:1px solid rgba(0,43,127,.4);border-radius:8px;padding:1rem;color:rgba(240,244,255,.7);font-size:.82rem;display:flex;align-items:center;gap:.5rem">
-            💳 Pay with HaitiCard — Haiti's first digital wallet — haiticard-app3.vercel.app
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ORDER -->
-<section id="order" class="section">
-  <div class="wrap reveal">
-    <div class="eyebrow">Place Your Order</div>
-    <h2>
-      <span data-lang="en" class="active">Order direct.<br><em>Ships in 2 days.</em></span>
-      <span data-lang="fr">Commandez direct.<br><em>Expédié en 2 jours.</em></span>
-      <span data-lang="ht">Kòmande dirèk.<br><em>Voye nan 2 jou.</em></span>
-    </h2>
-    <div class="order-grid">
-      <div class="order-form">
-        <div class="form-title">Your Order</div>
-        <div class="form-group">
-          <label class="form-label">Product</label>
-          <select class="form-select" id="product-select">
-            <option value="">Select a product...</option>
-            <option value="Aloe Vera Gel 2oz — $12">Aloe Vera Gel 2oz — $12</option>
-            <option value="Aloe Vera Gel 4oz — $18">Aloe Vera Gel 4oz — $18</option>
-            <option value="Aloe Repair Cream 2oz — $22">Aloe Repair Cream 2oz — $22</option>
-            <option value="Aloe Repair Cream 4oz — $28">Aloe Repair Cream 4oz — $28</option>
-            <option value="Aloe Soap Bar — $7">Aloe Soap Bar — $7</option>
-            <option value="Aloe Soap 3-pack — $18">Aloe Soap 3-pack — $18</option>
-            <option value="Starter Bundle (Gel + Soap) — $16">Starter Bundle (Gel + Soap) — $16</option>
-            <option value="Complete Trio (All 3) — $35">Complete Trio (All 3) — $35</option>
-            <option value="Gift Set — $42">Gift Set — $42</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-input" placeholder="Jean"/>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-input" placeholder="Baptiste"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">WhatsApp / Phone</label>
-          <input type="tel" class="form-input" placeholder="+1 305 000 0000"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="you@email.com"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Shipping Address</label>
-          <input type="text" class="form-input" placeholder="Street address, City, State, ZIP"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Payment Method</label>
-          <div class="payment-options">
-            <label class="payment-opt">
-              <input type="radio" name="payment" value="paypal"/> 💙 PayPal <span class="payment-opt-sub">paypal.me/peterphilentrope</span>
-            </label>
-            <label class="payment-opt">
-              <input type="radio" name="payment" value="haiticard"/> 💳 HaitiCard <span class="payment-opt-sub">Haiti's digital wallet</span>
-            </label>
-            <label class="payment-opt">
-              <input type="radio" name="payment" value="moncash"/> 📱 MonCash <span class="payment-opt-sub">Haiti mobile money</span>
-            </label>
-            <label class="payment-opt">
-              <input type="radio" name="payment" value="whatsapp"/> 💬 WhatsApp Order <span class="payment-opt-sub">Pay on delivery</span>
-            </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Notes (optional)</label>
-          <input type="text" class="form-input" placeholder="Scent preference, allergies, gift message..."/>
-        </div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:.9rem" onclick="submitOrder()">
-          <span data-lang="en" class="active">Place Order →</span>
-          <span data-lang="fr">Passer la Commande →</span>
-          <span data-lang="ht">Pase Kòmand →</span>
-        </button>
-        <p style="font-size:.72rem;color:var(--ink3);margin-top:.75rem;text-align:center">Orders confirmed via WhatsApp within 2 hours · Ships within 2 days</p>
-      </div>
-      <div class="order-info">
-        <div class="order-info-card">
-          <div class="oic-icon">📦</div>
-          <div>
-            <div class="oic-title">Fresh Made to Order</div>
-            <div class="oic-desc">Every batch is made fresh when you order. Not sitting in a warehouse. Your product ships within 2 business days of order confirmation.</div>
-          </div>
-        </div>
-        <div class="order-info-card">
-          <div class="oic-icon">🌍</div>
-          <div>
-            <div class="oic-title">Ships Worldwide</div>
-            <div class="oic-desc">We ship to USA, Canada, France, and throughout the Caribbean. Contact us on WhatsApp for international shipping rates to your country.</div>
-          </div>
-        </div>
-        <div class="order-info-card">
-          <div class="oic-icon">💬</div>
-          <div>
-            <div class="oic-title">Order via WhatsApp</div>
-            <div class="oic-desc">Prefer to order directly? WhatsApp us at +509 47 95 4115. We respond within 2 hours. We speak English, French, and Haitian Creole.</div>
-          </div>
-        </div>
-        <div class="order-info-card">
-          <div class="oic-icon">💳</div>
-          <div>
-            <div class="oic-title">Pay with HaitiCard</div>
-            <div class="oic-desc">Now accepting HaitiCard — Haiti's first digital wallet. Virtual Visa and Mastercard payments accepted. Visit haiticard-app3.vercel.app to get your card.</div>
-          </div>
-        </div>
-        <div class="order-info-card">
-          <div class="oic-icon">❤️</div>
-          <div>
-            <div class="oic-title">Every Purchase Gives Back</div>
-            <div class="oic-desc">10% of every sale is donated directly to FatherLeader Foundation — keeping Haitian children in school through direct educational grants. Shop good. Do good. 🇭🇹</div>
-          </div>
-        </div>
-        <a href="https://wa.me/50947954115?text=Hi%20I%20want%20to%20order%20from%20Haitian%20Aloe%20Naturals" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.9rem">
-          💬 WhatsApp Us to Order
-        </a>
-        <a href="https://www.paypal.com/donate/?business=peterphilentrope%40gmail.com&currency_code=USD" target="_blank" class="btn btn-gold" style="justify-content:center;font-size:.9rem">
-          💙 Pay via PayPal
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HAITICARD -->
-<section id="haiticard" class="section">
-  <div class="wrap reveal">
-    <div class="hc-inner">
-      <div class="hc-badge">💳 Powered by HaitiCard</div>
-      <h2 class="hc-title">Pay from anywhere.<br><span>Haiti's first digital wallet.</span></h2>
-      <p class="hc-desc">Ayiti Naturals accepts HaitiCard — the first digital wallet built for Haiti. Virtual Visa and Mastercard cards. MonCash integration. International payments. Get your card free today.</p>
-      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:1rem">
-        <a href="https://haiticard-app3.vercel.app" target="_blank" class="btn btn-gold">Get Your Free HaitiCard →</a>
-        <a href="https://www.gofundme.com/f/haiticard-financial-freedom-for-haiti" target="_blank" class="btn btn-outline">Support HaitiCard</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">🌿 Ayiti <span>Naturals</span></div>
-        <div class="footer-tagline">Grown in Haiti. Made with Love. 🇭🇹</div>
-        <div style="margin-top:.75rem;font-size:.78rem;color:rgba(255,255,255,.25)">pete@fatherleaderfoundation.org · +509 47 95 4115</div>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#bundles">Bundles</a></li>
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#order">Order</a></li>
-        <li><a href="https://fatherleaderfoundation.org" target="_blank">Foundation</a></li>
-        <li><a href="https://haiticard-app3.vercel.app" target="_blank">HaitiCard</a></li>
-        <li><a href="https://peterphilentrope.com" target="_blank">Pete</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">© 2026 Ayiti Naturals · Port-au-Prince, Haiti · A Pete Philentrope Venture · All rights reserved</div>
-  </div>
-</footer>
-
-<script>
-function setLang(lang){
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('btn-'+lang).classList.add('active');
-  document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.classList.remove('active');
-    if(el.getAttribute('data-lang')===lang) el.classList.add('active');
-  });
-  localStorage.setItem('aloeLang',lang);
-}
-document.addEventListener('DOMContentLoaded',function(){
-  setLang(localStorage.getItem('aloeLang')||'en');
-});
-
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
-
-function selectProduct(name){
-  const sel=document.getElementById('product-select');
-  for(let i=0;i<sel.options.length;i++){
-    if(sel.options[i].text.includes(name.split(' ')[0])){
-      sel.selectedIndex=i;
-      break;
-    }
-  }
-  document.getElementById('order').scrollIntoView({behavior:'smooth'});
-}
-
-function submitOrder(){
-  const product=document.getElementById('product-select').value;
-  if(!product){showToast('Please select a product first!');return;}
-  const wa=`https://wa.me/50947954115?text=Hi%20I%20want%20to%20order%3A%20${encodeURIComponent(product)}`;
-  window.open(wa,'_blank');
-  showToast('Opening WhatsApp to confirm your order!');
-}
-
-const reveals=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{rootMargin:'0px 0px -60px 0px'});
-reveals.forEach(r=>io.observe(r));
-</script>
 </body>
 </html>
